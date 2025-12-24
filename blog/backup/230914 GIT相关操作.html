@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="GIT相关操作" />
+    <meta name="hexo-theme-A4" content="v2.0.0" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>安德鲁</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">安德鲁</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+            
+                <li><a href="/project/">作品</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+
+    
+
+    <div class="post-md">
+        
+            
+        
+        <div class=".article-gallery"><h1 id="GIT相关操作"><a href="#GIT相关操作" class="headerlink" title="GIT相关操作"></a>GIT相关操作</h1><h2 id="获取-ssh-密钥-key-并配置"><a href="#获取-ssh-密钥-key-并配置" class="headerlink" title="获取 ssh 密钥 key 并配置"></a>获取 ssh 密钥 key 并配置</h2><p><strong>1.检查自己是否已经生成密钥</strong><br>密钥文件夹位置：<code>C:\Users\Administrator\.ssh</code><br>如果存在 id_rsa(私有密钥)和 id_rsa.pub(公有密钥)则说明已经生成过,可以通过文本直接打开公有密钥并复制或选择生成新的密钥<br><strong>2.生成密钥</strong><br>检查自己是否已设置过 git 用户名及邮箱,如果无查询结果,需要先配置用户名及邮箱</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询</span></span><br><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br><span class="line"><span class="comment"># 配置</span></span><br><span class="line">git config <span class="literal">--global</span> user.name <span class="string">&quot;你的用户名&quot;</span></span><br><span class="line">git config <span class="literal">--global</span> user.email <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>生成密钥指令</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -t 代表指定密钥类型,默认为rsa,这里设置为rsa</span></span><br><span class="line"><span class="comment"># -C 代表注释 后面跟注释文字</span></span><br><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> rsa <span class="literal">-C</span> <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>生成密钥的窗口</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">root</span>@<span class="type">localhost</span> ~]<span class="comment"># ssh-keygen -t rsa       &lt;== 建立密钥对，-t代表类型，有RSA和DSA两种</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> which to save the key (/root/.ssh/id_rsa):   &lt;==密钥文件默认存放位置，按Enter即可</span><br><span class="line">Created directory <span class="string">&#x27;/root/.ssh&#x27;</span>.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):     &lt;== 输入密钥锁码，或直接按 Enter 留空</span><br><span class="line">Enter same passphrase again:     &lt;== 再输入一遍密钥锁码</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /root/.ssh/id_rsa.    &lt;== 生成的私钥</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /root/.ssh/id_rsa.pub.    &lt;== 生成的公钥</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:K1qy928tkk1FUuzQtlZK+poeS67vIgPvHw9lQ+KNuZ4 root@localhost.localdomain</span><br><span class="line">The key<span class="string">&#x27;s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 2048]----+</span></span><br><span class="line"><span class="string">|           +.    |</span></span><br><span class="line"><span class="string">|          o * .  |</span></span><br><span class="line"><span class="string">|        . .O +   |</span></span><br><span class="line"><span class="string">|       . *. *    |</span></span><br><span class="line"><span class="string">|        S =+     |</span></span><br><span class="line"><span class="string">|    .    =...    |</span></span><br><span class="line"><span class="string">|    .oo =+o+     |</span></span><br><span class="line"><span class="string">|     ==o+B*o.    |</span></span><br><span class="line"><span class="string">|    oo.=EXO.     |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+
+<p>到此<code>C:\Users\Administrator\.ssh</code>文件目录下已生成 id_rsa(私有密钥)和 id_rsa.pub(公有密钥),复制公有密钥所有内容</p>
+<p><strong>3.项目管理人员将生成的公有密钥添加到项目拥有者的 SSH keys 中</strong></p>
+<ul>
+<li><p>进入 github 下的 Settings 中</p>
+</li>
+<li><p>进入到 SSH and GPG keys 下并选择 New SSH key</p>
+<a href="/img/posts/230914/003.jpg" class="gallery-item" style="box-shadow: none;"> <img src="/img/posts/230914/003.jpg" style="max-width:80%;min-width:200px"/></a>
+</li>
+<li><p>Title 用于编辑当前备注,Key Type 选择默认,将第二步复制的所有内容粘贴到 Key 中,点击 Add SSH key 即可</p>
+<a href="/img/posts/230914/004.jpg" class="gallery-item" style="box-shadow: none;"> <img src="/img/posts/230914/004.jpg" style="max-width:80%;min-width:200px"/></a>
+</li>
+<li><p>测试是否成功<br>通过指令<code>ssh -T git@github.com</code>出现以下结果即为成功,如出现提示输入 yes&#x2F;no 选择 yes 即可</p>
+<a href="/img/posts/230914/005.jpg" class="gallery-item" style="box-shadow: none;"> <img src="/img/posts/230914/005.jpg" style="max-width:80%;min-width:200px"/></a></li>
+</ul>
+<p><strong>https 和 ssh 的区别</strong></p>
+<ul>
+<li>HTTPS 协议只认账号。如果使用 HTTPS 操作远程仓库，则需要使用账号密码来做权限的认证。<br>SSH 协议只认机器。当使用 SSH 操作远程仓库的话，需要使用公钥和私钥对来做权限的认证。</li>
+<li>HTTPS 协议在未保存凭据的时候 push 是需要验证用户名和密码的<br>SSH 协议在 push 的时候，除非如果配置 SSH key 的时候设置了密码，否则是不需要输入用户名的</li>
+</ul>
+<p><strong>git 配置的用户名和邮箱有什么用？本地用户名和邮箱可以与线上 git 地址配置不一样的吗？</strong></p>
+<ul>
+<li>远程仓库为了跟踪是谁提交的代码，需要提交这提供身份信息：邮箱和用户名。</li>
+<li>可以,本地 Git 的用户名和邮箱地址主要用于标识提交记录中的作者信息，而远程 Git 服务上的用户名通常用于身份验证和访问控制。此外<ul>
+<li>如果 Git 配置的邮箱是 GitHub 中存在的邮箱，则 commits 里显示的是这个邮箱对应的账号</li>
+<li>如果 Git 配置的邮箱是一个在 GitHub 里不存在的邮箱，则 commits 里显示的是 Git 配置的用户名</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考文章：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35495339/article/details/92847819">Github 生成 SSH 秘钥（详细教程）</a> &gt; <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41100617/article/details/131891875">对使用 Git、GitHub 时邮箱和用户名的理解</a></p>
+</blockquote>
+<h2 id="配置-github-代理服务器"><a href="#配置-github-代理服务器" class="headerlink" title="配置 github 代理服务器"></a>配置 github 代理服务器</h2><p><strong>前置要求: 拥有一个可用的梯子（代理）将其运行并全局代理,并确认你的梯子的代理端口号</strong></p>
+<p><strong>示例 1:代理工具是<a target="_blank" rel="noopener" href="https://gw.znetoutlink.xyz/">VME</a>,以下是查看端口号的方式</strong></p>
+  <a href="/img/posts/230914/001.png" class="gallery-item" style="box-shadow: none;"> <img src="/img/posts/230914/001.png" style="max-width:60%;min-width:200px"/></a>
+
+<p><strong>示例 2:代理工具是<a target="_blank" rel="noopener" href="https://doc.miyun.app/app/clash-for-windows-chinese/">Clash for Windows</a>以下是查看端口号的方式</strong></p>
+  <a href="/img/posts/230914/002.jpg" class="gallery-item" style="box-shadow: none;"> <img src="/img/posts/230914/002.jpg" style="max-width:60%;min-width:200px"/></a>
+
+<p><strong>设置 Github 代理</strong><br>Git 代理有两种设置方式，分别是全局代理和只对 Github 代理，建议只对 github 代理。<br>代理协议也有两种，分别是使用 http 代理和使用 socks5 代理，建议使用 socks5 代理。<br>注意下面代码的端口号需要根据你自己的代理端口设定，比如我的代理 socks 端口是 4781。</p>
+<p><strong>查看代理</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="literal">--get</span> http.proxy</span><br><span class="line">git config <span class="literal">--get</span> https.proxy</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置代理</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用socks5代理（推荐）</span></span><br><span class="line">git config <span class="literal">--global</span> http.https://github.com.proxy socks5://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">4781</span></span><br><span class="line"><span class="comment">#使用http代理</span></span><br><span class="line">git config <span class="literal">--global</span> http.https://github.com.proxy http://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">4781</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>取消代理</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="literal">--global</span> http.https://github.com.proxy <span class="literal">--unset</span> http.proxy</span><br><span class="line">git config <span class="literal">--global</span> http.https://github.com.proxy <span class="literal">--unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+
+<h2 id="远程源操作"><a href="#远程源操作" class="headerlink" title="远程源操作"></a>远程源操作</h2><p><strong>查看远程源</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>替换远程源</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">set-url</span> origin <span class="string">&quot;远程源地址&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>删除远程源</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote remove 远程源名称如：origin</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加远程源</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin <span class="string">&quot;远程源地址&quot;</span></span><br></pre></td></tr></table></figure></div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>永远相信美好的事情即将发生</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

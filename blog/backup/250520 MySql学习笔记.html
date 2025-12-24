@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="MySql学习笔记" />
+    <meta name="hexo-theme-A4" content="v2.0.0" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>安德鲁</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">安德鲁</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+            
+                <li><a href="/project/">作品</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+
+    
+
+    <div class="post-md">
+        
+            
+        
+        <div class=".article-gallery"><h4 id="JOIN-INNER-JOIN"><a href="#JOIN-INNER-JOIN" class="headerlink" title="JOIN(INNER JOIN)"></a>JOIN(INNER JOIN)</h4><ul>
+<li>只保留两张表中都匹配的记录。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> users u</span><br><span class="line"><span class="keyword">JOIN</span> orders o <span class="keyword">ON</span> u.id <span class="operator">=</span> o.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="LEFT-JOIN"><a href="#LEFT-JOIN" class="headerlink" title="LEFT JOIN"></a>LEFT JOIN</h4><ul>
+<li>以左表为主，保留左表所有记录，即使右表中没有匹配的项。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> users u</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> orders o <span class="keyword">ON</span> u.id <span class="operator">=</span> o.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="RIGHT-JOIN"><a href="#RIGHT-JOIN" class="headerlink" title="RIGHT JOIN"></a>RIGHT JOIN</h4><ul>
+<li>以右表为主，保留右表所有记录，即使左表中没有匹配的项。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> users u</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> orders o <span class="keyword">ON</span> u.id <span class="operator">=</span> o.user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="IN"><a href="#IN" class="headerlink" title="IN"></a>IN</h4><ul>
+<li>是用于 过滤（WHERE 条件） 的一种语法，用来判断某个值是否属于一个给定的列表。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM users</span><br><span class="line">WHERE id IN (1, 2, 3);</span><br></pre></td></tr></table></figure>
+
+<h4 id="ON"><a href="#ON" class="headerlink" title="ON"></a>ON</h4><ul>
+<li>用于 JOIN 连接中，用来指定 两个表之间关联的条件。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> orders o</span><br><span class="line"><span class="keyword">JOIN</span> users u <span class="keyword">ON</span> o.user_id <span class="operator">=</span> u.id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="UNION-ALL"><a href="#UNION-ALL" class="headerlink" title="UNION ALL"></a>UNION ALL</h4><ul>
+<li><p>UNION 会去重，UNION ALL 不会，性能更高，适合递归查询。</p>
+</li>
+<li><p>将两个或多个查询的结果拼接在一起（不去重）。</p>
+</li>
+<li><p>例子：把 employees 和 managers 中的所有 name 合并（包括重复项）。</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Bob</td>
+</tr>
+<tr>
+<td>2</td>
+<td>David</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Bob</td>
+</tr>
+<tr>
+<td>2</td>
+<td>David</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>结果</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>name</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alice</td>
+<td></td>
+</tr>
+<tr>
+<td>Bob</td>
+<td></td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td></td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>← 重复出现</td>
+</tr>
+<tr>
+<td>David</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name <span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> name <span class="keyword">FROM</span> managers;</span><br></pre></td></tr></table></figure>
+
+<h4 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h4><ul>
+<li><p>将结果按照某个字段“分组”，通常配合聚合函数使用（如 COUNT()、SUM() 等）。</p>
+</li>
+<li><p>例子</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>id</th>
+<th>user_id</th>
+<th>org_id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a1</td>
+<td>u1</td>
+<td>o1</td>
+</tr>
+<tr>
+<td>a2</td>
+<td>u1</td>
+<td>o2</td>
+</tr>
+<tr>
+<td>a3</td>
+<td>u2</td>
+<td>o1</td>
+</tr>
+<tr>
+<td>a4</td>
+<td>u3</td>
+<td>o3</td>
+</tr>
+<tr>
+<td>a5</td>
+<td>u1</td>
+<td>o3</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>结果</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>user_id</th>
+<th>org_count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>u1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>u2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>u3</td>
+<td>1</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> user_id, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">as</span> org_count</span><br><span class="line"><span class="keyword">FROM</span> user_org</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="AS"><a href="#AS" class="headerlink" title="AS"></a>AS</h4><ul>
+<li>不区分大小写(as AS 均可) 可省略</li>
+<li>给某个字段或表起一个别名。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> id <span class="keyword">AS</span> userId <span class="keyword">FROM</span> <span class="keyword">user</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user_login_log <span class="keyword">AS</span> log</span><br><span class="line"><span class="comment">-- AS 可省略</span></span><br><span class="line"><span class="keyword">SELECT</span> id userId <span class="keyword">FROM</span> <span class="keyword">user</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> user_login_log log</span><br></pre></td></tr></table></figure>
+
+<h4 id="WITH-RECURSIVE"><a href="#WITH-RECURSIVE" class="headerlink" title="WITH RECURSIVE"></a>WITH RECURSIVE</h4><ul>
+<li><p>用于 递归查询 的关键语法，主要用于处理 树状结构 或 图状结构 数据, 可以从某个节点往下找子节点，或从某个节点往上找父节点，直到找完为止。</p>
+</li>
+<li><p>例子</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>parent_id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>总公司</td>
+<td><code>NULL</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>技术部</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>前端组</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>后端组</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>产品部</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>设计组</td>
+<td>5</td>
+</tr>
+<tr>
+<td>7</td>
+<td>交互组</td>
+<td>5</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>结果:从 技术部（id&#x3D;2） 向下，查出其所有子部门（包括子孙）</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>parent_id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>技术部</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>前端组</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>后端组</td>
+<td>2</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> <span class="keyword">RECURSIVE</span> org_tree <span class="keyword">AS</span> (</span><br><span class="line">  <span class="comment">-- 初始节点：技术部</span></span><br><span class="line">  <span class="keyword">SELECT</span> id, name, parent_id <span class="keyword">FROM</span> org <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">-- 递归部分：找所有子部门</span></span><br><span class="line">  <span class="keyword">SELECT</span> o.id, o.name, o.parent_id</span><br><span class="line">  <span class="keyword">FROM</span> org o</span><br><span class="line">  <span class="keyword">JOIN</span> org_tree ot <span class="keyword">ON</span> o.parent_id <span class="operator">=</span> ot.id</span><br><span class="line">)</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> org_tree;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>结果:从 前端组（id&#x3D;3） 向上，查出其所有上级（直到根）</li>
+<li><table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>parent_id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3</td>
+<td>前端组</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>技术部</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>总公司</td>
+<td>NULL</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> <span class="keyword">RECURSIVE</span> parent_chain <span class="keyword">AS</span> (</span><br><span class="line">  <span class="comment">-- 初始节点：前端组</span></span><br><span class="line">  <span class="keyword">SELECT</span> id, name, parent_id <span class="keyword">FROM</span> org <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">-- 递归部分：找所有父级</span></span><br><span class="line">  <span class="keyword">SELECT</span> o.id, o.name, o.parent_id</span><br><span class="line">  <span class="keyword">FROM</span> org o</span><br><span class="line">  <span class="keyword">JOIN</span> parent_chain pc <span class="keyword">ON</span> o.id <span class="operator">=</span> pc.parent_id</span><br><span class="line">)</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> parent_chain;</span><br></pre></td></tr></table></figure>
+
+<h4 id="OVER"><a href="#OVER" class="headerlink" title="OVER"></a>OVER</h4><ul>
+<li>用于窗口函数中，表示“这个函数作用在哪一块数据上”。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> login_time <span class="keyword">DESC</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="PARTITION-BY"><a href="#PARTITION-BY" class="headerlink" title="PARTITION BY"></a>PARTITION BY</h4><ul>
+<li>是 OVER() 的一部分，用来划分窗口的“分区”，就像 GROUP BY 一样，但不聚合。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 聚合（GROUP BY 后只保留一条记录）</span></span><br><span class="line"><span class="keyword">SELECT</span> user_id, <span class="built_in">MAX</span>(login_time)</span><br><span class="line"><span class="keyword">FROM</span> user_login_log</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> user_id;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 窗口函数（保留所有记录，加上“分组内编号”）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line">  <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> login_time <span class="keyword">DESC</span>) <span class="keyword">as</span> rn</span><br><span class="line"><span class="keyword">FROM</span> user_login_log;</span><br></pre></td></tr></table></figure>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>永远相信美好的事情即将发生</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

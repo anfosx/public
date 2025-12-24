@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="annual" />
+    <meta name="hexo-theme-A4" content="v2.0.0" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>安德鲁</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">安德鲁</a> 
+            <span class="description"></span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+            
+                <li><a href="/project/">作品</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+
+    
+
+    <div class="post-md">
+        
+            
+        
+        <div class=".article-gallery"><html lang="en">
+  <head>
+    <style>
+      #app {
+        padding: 0;
+      }
+      .timeline {
+        position: relative;
+        padding: 1rem 2rem 0 2rem;
+        margin: 0 auto;
+        &:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          border: 1px solid hotpink;
+          top: 0;
+          right: 20px;
+          left: auto;
+        }
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      }
+      .timeline__item {
+        padding: 1rem;
+        border: 2px solid skyblue;
+        border-image: linear-gradient(to right, skyblue 0%, hotpink 100%);
+        border-image-slice: 1;
+        position: relative;
+        clear: both;
+        margin: 1rem 3rem 1rem 1rem;
+        background-color: #fff;
+        &:after,
+        &:before {
+          content: "";
+          position: absolute;
+        }
+        &:before {
+          right: -10px;
+          top: calc(50% - 5px);
+          border-style: solid;
+          border-color: hotpink hotpink transparent transparent;
+          border-width: 10px;
+          transform: rotate(45deg);
+        }
+      }
+      .timeline__item--year {
+        max-width: 150px;
+        margin: 0 48px 0 auto;
+        padding: 12px !important;
+        line-height: 1;
+        background-color: #fff;
+        text-align: center;
+        &:before {
+          display: none;
+        }
+      }
+      .pc .timeline{
+        padding: 4rem 2rem 0 2rem;
+        &:before {
+          left: calc(50% - 1px);
+          right: auto;
+        }
+      }
+      .pc .timeline__item{
+        width: 44%;
+        margin: 1rem;
+        &:nth-of-type(4n) {
+          float: right;
+          margin: 1rem;
+          border-image: linear-gradient(to right, hotpink 0%, skyblue 100%);
+          border-image-slice: 1;
+          &:before {
+            right: auto;
+            left: -10px;
+            border-color: transparent transparent hotpink hotpink;
+          }
+        }
+      }
+      .pc .timeline__item--year{
+        margin: 0 auto;
+        text-align: center;
+        &:nth-of-type(2n) {
+          float: none;
+          margin: 0 auto;
+          &:before {
+            display: none;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="timeline">
+        <h3 class="timeline__item timeline__item--year">Soon</h3>
+        <div class="timeline__item">
+          <ul style="margin: 0">
+            <li>📚️学习app端开发</li>
+            <li>📜学习Vite工程化工具</li>
+          </ul>
+        </div>
+        <h3 class="timeline__item timeline__item--year">2026</h3>
+        <div class="timeline__item">
+          <ul style="margin: 0">
+            <li>📜学习《前端算法与数据结构》</li>
+            <li>☑️leecode 100题</li>
+            <li>🔁复习React</li>
+            <li>💻️编写React系应用</li>
+            <li>☑️完成社区App</li>
+            <li>📜学习《TypeScript 全面进阶指南》</li>
+          </ul>
+        </div>
+        <h3 class="timeline__item timeline__item--year">2025</h3>
+        <div class="timeline__item">
+          <ul style="margin: 0">
+            <li><del>📖阅读《亲密关系》</del></li>
+            <li><del>📜学习《JS设计模式核心原理》</del></li>
+            <li style="color:red">📜学习《前端算法与数据结构》</li>
+            <li><del>📜学习《TypeScript 入门教程》</del></li>
+            <li><del>📚️入门Cocos开发</del></li>
+          </ul>
+        </div>
+        <h3 class="timeline__item timeline__item--year">2024</h3>
+        <div class="timeline__item">
+          <ul style="margin: 0">
+            <li><del>💻搭建个人博客</del></li>
+            <li><del>👨🏻‍💻编写社区App</del></li>
+          </ul>
+        </div>
+        <h3 class="timeline__item timeline__item--year">2023</h3>
+        <div class="timeline__item">
+          <ul style="margin: 0">
+            <li><del>📚️学习Koa2</del></li>
+          </ul>
+        </div>
+        <h3 class="timeline__item timeline__item--year">2022</h3>
+      </div>
+    </div>
+    <script>
+      function applyResponsiveStyles() {
+        var content = document.querySelector("#app");
+        if (window.innerWidth < 750) {
+          content.classList.remove("pc")
+          content.classList.add("mobile")
+        } else {
+          content.classList.add("pc")
+          content.classList.remove("mobile")
+        }
+      }
+      // 初次加载时应用样式
+      applyResponsiveStyles();
+      // 窗口大小改变时应用样式
+      window.addEventListener("resize", applyResponsiveStyles);
+    </script>
+  </body>
+</html>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+             
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>永远相信美好的事情即将发生</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>
